@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/Card";
 
 function App() {
+  const peoples = [
+    { id: 0, name: "Ádi", details: "Valami" },
+    { id: 1, name: "Feri", details: "Semmi" },
+    { id: 2, name: "Béla", details: "Akármi" },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {peoples.map((item) => {
+        return <Card name={item.name} details={item.details} key={item.id} />;
+      })}
     </div>
   );
 }
