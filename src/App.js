@@ -1,15 +1,28 @@
 import Card from "./components/Card";
+import Cardwithclass from "./components/Cardwclass";
 
 function App() {
   const peoples = [
-    { id: 0, name: "Ádi", details: "Valami" },
-    { id: 1, name: "Feri", details: "Semmi" },
-    { id: 2, name: "Béla", details: "Akármi" },
+    { id: 0, name: "gergo", details: "rendom valami" },
+    { id: 1, name: "laci", details: "random valami" },
+    { id: 2, name: "feri", details: "rondom valami" },
   ];
+
   return (
     <div className="App">
-      {peoples.map((item) => {
-        return <Card name={item.name} details={item.details} key={item.id} />;
+      {peoples.map((people) => {
+        return (
+          <Card name={people.name} details={people.details} key={people.id} />
+        );
+      })}
+      {peoples.map((people) => {
+        return (
+          <Cardwithclass
+            name={people.name}
+            details={people.details}
+            key={people.id}
+          />
+        );
       })}
     </div>
   );
